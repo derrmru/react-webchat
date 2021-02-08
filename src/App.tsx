@@ -1,4 +1,4 @@
-import React from 'react';
+import Chatbot from './components/Chatbot/Chatbot'
 import logo from './logo.svg';
 import './App.css';
 
@@ -7,18 +7,14 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
+      <Chatbot 
+        endpoint={'http://localhost:5000'}
+        iconSize='50'
+        brandColor='#248ec2'
+        brandColor2='#20365F'
+        title='London Foot & Ankle Surgery'
+        />
     </div>
   );
 }

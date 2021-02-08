@@ -1,46 +1,46 @@
-# Getting Started with Create React App
+A simple lightweight chat ui template component build react.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Installation
 
-## Available Scripts
+You must set required props for this to function.
 
-In the project directory, you can run:
+IMPORTANT: your server must emit to 'receive' and listen to 'send' at your socket endpoint.
 
-### `yarn start`
+## Usage
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```
+import Chatbot from 'react-webchat'
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+function App() {
+  return (
+    <>
+      <Chatbot 
+        endpoint={'http://localhost:5000'}
+        iconSize='50'
+        brandColor='#248ec2'
+        brandColor2='#20365F'
+        title='React Webchat'
+        />
+    </>
+  );
+}
 
-### `yarn test`
+export default App;
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+```
+## Props
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Props: 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. endpoint: string         //Required - your server Websocket endpoint, this is built for Socket.io
+2. iconSize: string         //Required - size in pixels of your chat icon
+3. brandColor: string       //Required - set your brand colors, will accept normal css color values as a string
+4. brandColor2: string      //Required - as above
+5. title: string            //Required - the title of the component, this is shown in header section
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Dependencies
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+React
+Socket
+Typescript
